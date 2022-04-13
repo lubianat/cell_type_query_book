@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cell Types on Wikidata</title>
+    <meta property="og:description" content="powered by Wikidata" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half has-text-centered">
+                    <h1 class="title is-1">Cell Type Query Book </h1>
+                        
+                    <h3 class="title is-3"> Some Wikidata Queries</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="has-text-centered">
+
+<p />
+<h5 class="title is-5"> Subclasses of "cell" on Wikidata </h5>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%20%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%0A%7D%0AORDER%20BY%0A%20%20DESC%20%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+ <br />
+  <h5 class="title is-5"> How many are there? </h5>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%28COUNT%28DISTINCT%20%3Fitem%29%20as%20%3Fcount%29%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> <br />
+<p />
+<h5 class="title is-5"> Now just the ones with images </h5>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0ASELECT%20%0A%20%20%3Fitem%20%3FitemLabel%20%3Fimage%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fitem%20wdt%3AP18%20%3Fimage%20.%20%0A%20%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%0A%7D%0AORDER%20BY%0A%20%20DESC%20%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> <br />
+ <br />
+      
+<p />
+<h5 class="title is-5"> Items with Cell Ontology IDs </h5>      
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>      
+ <br />    
+      
+                     <h3 class="title is-3"> Some Curation Queries</h3>
+                           <h4 class="title is-3">Things that shouldn't be where they are</h3>
+      
+<p />
+<h5 class="title is-5"> Cells with Cell Ontology ID but not a subclass of cell </h5>      
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20MINUS%20%7B%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+  <br />
+<p />
+<h5 class="title is-5"> Instances of cell </h5>      
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ7868%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>  <br />
+
+    <br />
+<p />
+      
+      
+<h5 class="title is-5">  Rare statements used for subclasses of cell (Q7868), excluding identifiers </h5>      
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%3Fitem%20%3FitemLabel%20%0A%3Fproperty%20%3FpropertyLabel%0A%3Fobject%20%3FobjectLabel%0A%23%20%28IRI%28CONCAT%28str%28%3Fitem%29%2C%20%28REPLACE%28STR%28%3Fproperty%29%2C%22http%3A%2F%2Fwww.wikidata.org%2Fentity%2FP%22%2C%22%23P%22%29%29%29%29%20as%20%20%3FstatementUrl%29%0AWHERE%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20.%0A%20%20%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%20%20%3Fitem%20%3Fp%20%3Fobject.%0A%7BSELECT%20DISTINCT%20%0A%3Fproperty%20%3FpropertyLabel%20%0A%28COUNT%28%3Fitem%29%20AS%20%3Fcounts%29%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20%3B%0A%20%20%20%20%20%20%20%20%3Fp%20%3Fo%20.%0A%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%0A%20%20MINUS%20%7B%20%3Fproperty%20wikibase%3ApropertyType%20wikibase%3AExternalId%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20GROUP%20BY%20%3Fproperty%20%3FpropertyLabel%0AHAVING%20%28%3Fcounts%20%3C%2010%29%0AORDER%20BY%20DESC%28%3Fcounts%29%0A%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+      <br />
+<p />
+      
+ <h5 class="title is-5">     Cell types that have a page in English but not in portuguese </h5>      
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%20%3Fsitelink1%20%3Fsitelinks%0AWHERE%20%0A%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%20%20%0A%20%20%20%20%0A%20%7B%20%3Fsitelink1%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fen.wikipedia.org%2F%3E%3B%0A%20%20%20%20%20schema%3Aabout%20%3Fitem%3B%7D%0A%20%20MINUS%0A%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%3Fsitelink2%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fpt.wikipedia.org%2F%3E%3B%0A%20%20%20schema%3Aabout%20%3Fitem%3B%7D%0A%0A%20%20%3Fitem%20rdfs%3Alabel%20%3Flabel%0A%20%20FILTER%20%28lang%28%3Flabel%29%20%3D%20%27en%27%29%0A%20%20%20%20%20%20%20%20%0A%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20%20%20%20%20%20%20%0A%7D%0AORDER%20BY%20DESC%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> 
+        <br />
+<p />
+      
+
+  </div>
+  
+  
+  
+      <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <h4>
+                   By Tiago Lubiana. CC0. 
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
