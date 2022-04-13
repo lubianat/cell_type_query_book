@@ -43,8 +43,23 @@
 <h5 class="title is-5"> Items with Cell Ontology IDs </h5>      
 <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>      
  <br />    
-      
-                     <h3 class="title is-3"> Some Curation Queries</h3>
+
+  <h3 class="title is-3"> Integrative Queries</h3>
+
+<p />
+<h5 class="title is-5"> Cell types related to Parkinson via markers </h5>      
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23title%3A%20Cell%20types%20related%20to%20Parkinsons%27%20disease%20via%20markers%20%0A%0ASELECT%20%3FcellTypeLabel%20%3FgeneLabel%20%3FdiseaseLabel%20%0AWHERE%20%0A%7B%0A%20%20wd%3AQ11085%20wdt%3AP2293%20%3FdiseaseGene.%20%20%23%20Parkinson%27s%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%3FcellType%20wdt%3AP8872%20%3FdiseaseGene.%20%23%20Cell%20type%20--%3E%20has%20marker%20--%3E%20gene%0A%20%20%0A%20%20%3FcellType%20rdfs%3Alabel%20%3FcellTypeLabel.%0A%20%20wd%3AQ11085%20rdfs%3Alabel%20%3FdiseaseLabel.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>    
+<br /> 
+
+<p />
+<h5 class="title is-5"> Cell types related to Neurogenesis via markers </h5>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23title%3A%20Cell%20types%20related%20to%20neurogenesis%20via%20markers%0A%0ASELECT%20%3FgeneLabel%20%3FcellTypeLabel%0AWHERE%20%0A%7B%0A%20%20%3Fprotein%20wdt%3AP682%20wd%3AQ1456827.%20%23%20protein%20molecular%20process%20neurogenesis%0A%20%20%3Fprotein%20wdt%3AP702%20%3Fgene.%20%20%20%20%20%20%20%23%20protein%20encoded%20by%20gene%0A%20%20%0A%20%20%7B%3Fgene%20wdt%3AP31%20wd%3AQ277338.%7D%20%20%20%20%23%20gene%20is%20an%20instance%20of%20a%20pseudogene%20%0A%20%20UNION%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20or%0A%20%20%7B%3Fgene%20wdt%3AP31%20wd%3AQ7187.%7D%20%20%20%20%20%20%23%20gene%20is%20an%20instance%20of%20a%20gene%0A%20%20%3Fgene%20wdt%3AP703%20wd%3AQ15978631.%20%20%20%23%20gene%20is%20found%20in%20taxon%20Homo%20sapiens%0A%20%20%0A%20%20%3FcellType%20wdt%3AP8872%20%3Fgene.%20%20%20%20%20%23%20cell%20type%20has%20marker%20gene%0A%20%20%0A%20%20%3FcellType%20rdfs%3Alabel%20%3FcellTypeLabel.%0A%20%20%3Fgene%20%20%20rdfs%3Alabel%20%3FgeneLabel.%0A%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+<br /> 
+        
+<p />
+<h5 class="title is-5">Diseases associated with pancreatic beta cells via markers </h5>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23titles%3A%20Diseases%20associated%20with%20pancreatic%20beta%20cells%20via%20markers%0ASELECT%20%3FcellTypeLabel%20%3FdiseaseLabel%20%0A%28COUNT%28DISTINCT%20%3FdiseaseGene%29%20AS%20%3Fcount%29%20%0A%28GROUP_CONCAT%28DISTINCT%20%3FgeneLabel%3B%20SEPARATOR%3D%22%2C%20%22%29%20AS%20%3Fgenes%29%0AWHERE%20%0A%7B%0A%20%20wd%3AQ101405087%20wdt%3AP8872%20%3FdiseaseGene%20.%20%20%20%20%23%20human%20pancreatic%20beta%20cell%20--%3E%20%20has%20marker%20--%3E%20%20gene%0A%20%20%3Fdisease%20wdt%3AP2293%20%3FdiseaseGene%20.%20%20%20%20%20%20%20%20%20%23%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%0A%20%20wd%3AQ101405087%20rdfs%3Alabel%20%3FcellTypeLabel%20.%0A%20%20%3Fdisease%20rdfs%3Alabel%20%3FdiseaseLabel%20.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel%20.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%20%20%0A%20%7D%0A%0AGROUP%20BY%20%3FdiseaseLabel%20%3FcellTypeLabel%20%0AORDER%20BY%20DESC%28%3Fcount%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+<br />                                 <h3 class="title is-3"> Some Curation Queries</h3>
                            <h4 class="title is-3">Things that shouldn't be where they are</h3>
       
 <p />
