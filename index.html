@@ -38,8 +38,12 @@
 <h5 class="title is-5"> Now just the ones with images </h5>
 <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0ASELECT%20%0A%20%20%3Fitem%20%3FitemLabel%20%3Fimage%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fitem%20wdt%3AP18%20%3Fimage%20.%20%0A%20%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%0A%7D%0AORDER%20BY%0A%20%20DESC%20%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> <br />
  <br />
-      
+        
 <p />
+<h5 class="title is-5"> Which human cells have the most catalogued markers? </h5>    
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fcell_type%20%3Fcell_typeLabel%20%28count%28%3Fmarker%29%20as%20%3Fmarker_count%29%0AWHERE%20%0A%7B%0A%20%20%3Fcell_type%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ189118.%0A%20%20%3Fcell_type%20wdt%3AP703%20wd%3AQ15978631.%0A%20%20%3Fcell_type%20wdt%3AP8872%20%3Fmarker.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3Fcell_type%20%3Fcell_typeLabel%0AORDER%20BY%20DESC%28%3Fmarker_count%29%20%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+ <br />
+        <p />
 <h5 class="title is-5"> Items with Cell Ontology IDs </h5>      
 <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>      
  <br />    
