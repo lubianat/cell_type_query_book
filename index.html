@@ -71,6 +71,11 @@
 <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20MINUS%20%7B%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
   <br />
 <p />
+<h5 class="title is-5"> Cells with FMA ID but not Cell Ontology ID </h5>      
+        <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20%3Ffma_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%20%0A%20%20%3Fitem%20wdt%3AP1402%20%3Ffma_id%20.%0A%20%20%0A%20%20FILTER%20NOT%20EXISTS%20%7B%3Fitem%20wdt%3AP7963%20%3Fcl_id%20.%20%7D%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+  <br />
+                
+<p />
 <h5 class="title is-5"> Instances of cell </h5>      
 <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ7868%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>  <br />
 
