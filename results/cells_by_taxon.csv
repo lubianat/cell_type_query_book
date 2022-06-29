@@ -1,0 +1,33 @@
+taxon_name,taxon,taxonLabel,qid
+Amphibia,1,1,1
+Vertebrata,1,1,1
+Spalax ehrenbergi,1,1,1
+Sepia officinalis,1,1,1
+Reptilia,1,1,1
+Plantae,1,1,1
+Pisces,1,1,1
+Ovis aries,1,1,1
+Metazoa,1,1,1
+Mesocricetus auratus,1,1,1
+Macaca fascicularis,1,1,1
+Mammalia,1,1,1
+Cephalopoda,1,1,1
+Caenorhabditis elegans,1,1,1
+Callithrix jacchus,1,1,1
+Fungi,1,1,1
+Caenorhabditis,1,1,1
+Crustacea,1,1,1
+Ciona intestinalis,1,1,1
+Danio nigrofasciatus,1,1,1
+Doryteuthis opalescens,1,1,1
+Apicomplexa,1,1,1
+Plasmodium falciparum,2,2,2
+Primates,2,2,2
+Sarcocystidae,2,2,2
+Insecta,2,2,2
+Xenopus laevis,3,3,3
+Danio rerio,9,9,9
+Rattus norvegicus,36,36,36
+Mus musculus,372,372,372
+Homo sapiens,636,636,636
+no taxon specified,2996,2996,2996
