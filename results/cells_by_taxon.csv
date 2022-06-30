@@ -1,4 +1,4 @@
-taxon_name,taxon,taxonLabel,qid
+taxon_name,taxon,qid,taxonLabel
 Amphibia,1,1,1
 Vertebrata,1,1,1
 Spalax ehrenbergi,1,1,1
@@ -30,4 +30,4 @@ Danio rerio,9,9,9
 Rattus norvegicus,36,36,36
 Mus musculus,372,372,372
 Homo sapiens,636,636,636
-no taxon specified,2996,2996,2996
+no taxon specified,2995,2995,2995

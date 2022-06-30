@@ -25,7 +25,7 @@ df.groupby("taxon_name").count().sort_values(by="qid").to_csv(
 )
 
 editors_df = pd.read_csv(base_folder + "cells_wikidata_editors.csv")
-
+editors_df = editors_df[["username", "count", "qid"]]
 for i, row in tqdm(df.iterrows(), total=df.shape[0]):
     qid = row["qid"]
     if qid not in list(set(editors_df["qid"])):
@@ -33,7 +33,7 @@ for i, row in tqdm(df.iterrows(), total=df.shape[0]):
 
 editors_df = editors_df.drop_duplicates()
 
-editors_df.to_csv(base_folder + "cells_wikidata_editors.csv")
+editors_df.to_csv(base_folder + "cells_wikidata_editors.csv", index=False)
 
 editors_df_reshaped = editors_df.drop_duplicates().pivot(
     index="qid", columns="username", values="count"
@@ -56,9 +56,13 @@ for i, row in tqdm(df.iterrows(), total=df.shape[0]):
 with open(base_folder + "cells_wikidata_authors.json", "w") as fp:
     json.dump(author_dict, fp)
 
-
 res = Counter(author_dict.values())
+print(res)
 
+authors_df = pd.DataFrame.from_dict(res, orient="index")
+authors_df["author"] = authors_df.index
+authors_df.columns = ["count", "author"]
+authors_df.to_csv("results/cells_wikidata_authors.csv", index=False)
 # Autogenerate text for report:
 
 date = ""
