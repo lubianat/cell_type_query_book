@@ -1,33 +1,50 @@
-taxon_name,taxon,qid,taxonLabel
-Amphibia,1,1,1
-Vertebrata,1,1,1
+taxon_name,taxonLabel,qid,taxon
+Algae,1,1,1
+Thaliacea,1,1,1
+Stropharia,1,1,1
 Spalax ehrenbergi,1,1,1
 Sepia officinalis,1,1,1
-Reptilia,1,1,1
+Potamididae,1,1,1
+Porifera,1,1,1
 Plantae,1,1,1
 Pisces,1,1,1
 Ovis aries,1,1,1
-Metazoa,1,1,1
 Mesocricetus auratus,1,1,1
-Macaca fascicularis,1,1,1
-Mammalia,1,1,1
-Cephalopoda,1,1,1
-Caenorhabditis elegans,1,1,1
-Callithrix jacchus,1,1,1
-Fungi,1,1,1
-Caenorhabditis,1,1,1
-Crustacea,1,1,1
-Ciona intestinalis,1,1,1
-Danio nigrofasciatus,1,1,1
 Doryteuthis opalescens,1,1,1
+Metazoa,1,1,1
+Crustacea,1,1,1
+Ascidiacea,1,1,1
+Caenorhabditis,1,1,1
+Caenorhabditis elegans,1,1,1
+Danio nigrofasciatus,1,1,1
+Carnivora,1,1,1
+Cephalopoda,1,1,1
+Ciona intestinalis,1,1,1
 Apicomplexa,1,1,1
-Plasmodium falciparum,2,2,2
-Primates,2,2,2
+Callithrix jacchus,2,2,2
 Sarcocystidae,2,2,2
-Insecta,2,2,2
+Plasmodium falciparum,2,2,2
+Reptilia,2,2,2
+Annelida,2,2,2
+Mammalia,2,2,2
+Felis catus,2,2,2
+Diptera,2,2,2
+Amphibia,2,2,2
 Xenopus laevis,3,3,3
+Trachemys scripta elegans,3,3,3
+Insecta,3,3,3
+Pogona vitticeps,3,3,3
+Fungi,3,3,3
+Primates,3,3,3
+Endopterygota,3,3,3
+Rhodophyta,3,3,3
+Vertebrata,7,7,7
 Danio rerio,9,9,9
-Rattus norvegicus,36,36,36
-Mus musculus,372,372,372
-Homo sapiens,636,636,636
-no taxon specified,2995,2995,2995
+Mus,10,10,10
+Protostomia,11,11,11
+Nematoda,16,16,16
+Macaca fascicularis,18,18,18
+Rattus norvegicus,42,42,42
+Mus musculus,444,444,444
+Homo sapiens,727,727,727
+no taxon specified,4775,4775,4775

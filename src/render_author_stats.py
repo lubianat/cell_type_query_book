@@ -5,7 +5,6 @@ from pathlib import Path
 from helper import *
 import pandas as pd
 import json
-from plotnine import ggplot
 from collections import Counter
 
 HERE = Path(__file__).parent.resolve()
@@ -91,3 +90,6 @@ Approximatedly 430 hundred terms were added via manual curation based on Panglao
 These statistics are demonstration of how the curation system efficiently contributes to the status of cell type information on Wikidata.
 """
 print(text)
+
+with open("author_stats.txt", "w") as fp:
+    json.dump(text, fp)
