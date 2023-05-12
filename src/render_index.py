@@ -47,7 +47,7 @@ def main():
     
     """
 
-    with open("docs/dashboard.yaml", "r") as c:
+    with open("src/dashboard.yaml", "r") as c:
         config = yaml.load(c.read(), Loader=yaml.FullLoader)
 
     for query in config["queries"]:
@@ -71,7 +71,7 @@ def main():
     </html>
     
     """
-    DOCS.joinpath("index.html").write_text(html)
+    HERE.parent.joinpath("index.html").write_text(html)
 
 
 def update_html(html, query):

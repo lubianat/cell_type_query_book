@@ -2,115 +2,163 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cell Types on Wikidata</title>
-    <meta property="og:description" content="powered by Wikidata" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cell Types on Wikidata</title>
+  <meta property="og:description" content="powered by Wikidata" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-half has-text-centered">
-                    <h1 class="title is-1">Cell Type Query Book </h1>
-                        
-                    <h3 class="title is-3"> Some Wikidata Queries</h3>
-                </div>
-            </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+          <h1 class="title is-1">The Cell Type Query Book </h1>
+
+          <p> A collection of Wikidata SPARQL Queries showcasing the richness of information in the platform</p>
         </div>
-    </section>
-    <div class="has-text-centered">
+      </div>
+    </div>
+  </section>
+  <div class="has-text-centered">
 
-<p />
-<h5 class="title is-5"> Subclasses of "cell" on Wikidata </h5>
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%20%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%0A%7D%0AORDER%20BY%0A%20%20DESC%20%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
- <br />
-  <h5 class="title is-5"> How many are there? </h5>
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%28COUNT%28DISTINCT%20%3Fitem%29%20as%20%3Fcount%29%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> <br />
-<p />
-<h5 class="title is-5"> Now just the ones with images </h5>
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0ASELECT%20%0A%20%20%3Fitem%20%3FitemLabel%20%3Fimage%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fitem%20wdt%3AP18%20%3Fimage%20.%20%0A%20%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%0A%7D%0AORDER%20BY%0A%20%20DESC%20%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> <br />
- <br />
-        
-<p />
-<h5 class="title is-5"> Which human cells have the most catalogued markers? </h5>    
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fcell_type%20%3Fcell_typeLabel%20%28count%28%3Fmarker%29%20as%20%3Fmarker_count%29%0AWHERE%20%0A%7B%0A%20%20%3Fcell_type%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ189118.%0A%20%20%3Fcell_type%20wdt%3AP703%20wd%3AQ15978631.%0A%20%20%3Fcell_type%20wdt%3AP8872%20%3Fmarker.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3Fcell_type%20%3Fcell_typeLabel%0AORDER%20BY%20DESC%28%3Fmarker_count%29%20%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
- <br />
-        <p />
-<h5 class="title is-5"> Items with Cell Ontology IDs </h5>      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>      
- <br />    
+    <p />
+    <h5 class="title is-5"> Overview of all cell classes on Wikidata </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23%20Core%20information%20about%20cell%20types%20on%20Wikidata%0ASELECT%20%0A%20%20%3Fwikidata%20%3Flabel%20%28GROUP_CONCAT%28%3Falias%3B%20SEPARATOR%3D%22%20%7C%20%22%29%20as%20%3Faliases%29%20%3Fcell_ontology%20%3Fmesh%20%3Fwikipedia%20%3Fsitelinks%0AWHERE%20%0A%7B%0A%20%20%3Fwikidata%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fwikidata%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20%3Fwikidata%20rdfs%3Alabel%20%3Flabel%20.%20%0A%20%20FILTER%28LANG%28%3Flabel%29%3D%22en%22%29%0A%20%20OPTIONAL%20%7B%3Fwikidata%20skos%3AaltLabel%20%3Falias%20.%20%0A%20%20FILTER%28LANG%28%3Falias%29%3D%22en%22%29%20%7D%0A%0A%20%20%0A%20%20OPTIONAL%7B%3Fwikidata%20wdt%3AP7963%20%3Fcell_ontology%20.%20%7D%0A%20%20OPTIONAL%7B%3Fwikidata%20wdt%3AP486%20%3Fmesh%20.%20%7D%0A%20%20OPTIONAL%7B%20%20%3Fwikipedia%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fen.wikipedia.org%2F%3E%3B%0A%20%20%20%20%20schema%3Aabout%20%3Fwikidata%20.%20%7D%0A%0A%7D%0AGROUP%20BY%20%3Fwikidata%20%3Flabel%20%3Fcell_ontology%20%3Fmesh%20%3Fwikipedia%20%3Fsitelinks%20%0AORDER%20BY%20DESC%20%28%3Fsitelinks%29"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <h5 class="title is-5"> Current count: how many are there? </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%28COUNT%28DISTINCT%20%3Fitem%29%20as%20%3Fcount%29%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%7D%0A"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe> <br />
+    <p />
 
-  <h3 class="title is-3"> Integrative Queries</h3>
 
-<p />
-<h5 class="title is-5"> Cell types related to Parkinson via markers </h5>      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23title%3A%20Cell%20types%20related%20to%20Parkinsons%27%20disease%20via%20markers%20%0A%0ASELECT%20%3FcellTypeLabel%20%3FgeneLabel%20%3FdiseaseLabel%20%0AWHERE%20%0A%7B%0A%20%20wd%3AQ11085%20wdt%3AP2293%20%3FdiseaseGene.%20%20%23%20Parkinson%27s%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%3FcellType%20wdt%3AP8872%20%3FdiseaseGene.%20%23%20Cell%20type%20--%3E%20has%20marker%20--%3E%20gene%0A%20%20%0A%20%20%3FcellType%20rdfs%3Alabel%20%3FcellTypeLabel.%0A%20%20wd%3AQ11085%20rdfs%3Alabel%20%3FdiseaseLabel.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>    
-<br /> 
+    <h5 class="title is-5"> What are the sources of evidence for those cell types? </h5>
+    <iframe style="width: 80%; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23%23title%3A%20Number%20of%20cell%20types%20per%20reference%20source%0ASELECT%20DISTINCT%20%20%3Freference%20%3FreferenceLabel%20%28count%28DISTINCT%20%3Fitem%29%20as%20%3Fcount%29%20%28SAMPLE%28%3Fitem%29%20as%20%3Fsample_item%29%20%28SAMPLE%28%3FitemLabel%29%20as%20%3Fsample_label%29%0AWHERE%0A%7B%0A%20%20%20%20%3Fitem%20wdt%3AP279%2A%20wd%3AQ7868%20.%0A%20%20%0A%20%20%20%20%3Fitem%20rdfs%3Alabel%20%3FitemLabel%20.%20%0A%20%20%20%20FILTER%28LANG%28%3FitemLabel%29%20%3D%20%22en%22%29%0A%20%20%20%20%3Fitem%20p%3AP31%20%3Fstatement.%20%0A%20%20%20%20%3Fstatement%20prov%3AwasDerivedFrom%20%3Fprovenance%20.%0A%20%20%20%20%3Fprovenance%20pr%3AP248%20%3Freference%20.%0A%0A%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22%20%7D%0A%7D%0AGROUP%20BY%20%3Freference%20%3FreferenceLabel%20%20%0AORDER%20BY%20DESC%28%3Fcount%29"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
 
-<p />
-<h5 class="title is-5"> Cell types related to Neurogenesis via markers </h5>
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23title%3A%20Cell%20types%20related%20to%20neurogenesis%20via%20markers%0A%0ASELECT%20%3FgeneLabel%20%3FcellTypeLabel%0AWHERE%20%0A%7B%0A%20%20%3Fprotein%20wdt%3AP682%20wd%3AQ1456827.%20%23%20protein%20molecular%20process%20neurogenesis%0A%20%20%3Fprotein%20wdt%3AP702%20%3Fgene.%20%20%20%20%20%20%20%23%20protein%20encoded%20by%20gene%0A%20%20%0A%20%20%7B%3Fgene%20wdt%3AP31%20wd%3AQ277338.%7D%20%20%20%20%23%20gene%20is%20an%20instance%20of%20a%20pseudogene%20%0A%20%20UNION%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20or%0A%20%20%7B%3Fgene%20wdt%3AP31%20wd%3AQ7187.%7D%20%20%20%20%20%20%23%20gene%20is%20an%20instance%20of%20a%20gene%0A%20%20%3Fgene%20wdt%3AP703%20wd%3AQ15978631.%20%20%20%23%20gene%20is%20found%20in%20taxon%20Homo%20sapiens%0A%20%20%0A%20%20%3FcellType%20wdt%3AP8872%20%3Fgene.%20%20%20%20%20%23%20cell%20type%20has%20marker%20gene%0A%20%20%0A%20%20%3FcellType%20rdfs%3Alabel%20%3FcellTypeLabel.%0A%20%20%3Fgene%20%20%20rdfs%3Alabel%20%3FgeneLabel.%0A%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
-<br /> 
-        
-<p />
-<h5 class="title is-5">Diseases associated with pancreatic beta cells via markers </h5>
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23titles%3A%20Diseases%20associated%20with%20pancreatic%20beta%20cells%20via%20markers%0ASELECT%20%3FcellTypeLabel%20%3FdiseaseLabel%20%0A%28COUNT%28DISTINCT%20%3FdiseaseGene%29%20AS%20%3Fcount%29%20%0A%28GROUP_CONCAT%28DISTINCT%20%3FgeneLabel%3B%20SEPARATOR%3D%22%2C%20%22%29%20AS%20%3Fgenes%29%0AWHERE%20%0A%7B%0A%20%20wd%3AQ101405087%20wdt%3AP8872%20%3FdiseaseGene%20.%20%20%20%20%23%20human%20pancreatic%20beta%20cell%20--%3E%20%20has%20marker%20--%3E%20%20gene%0A%20%20%3Fdisease%20wdt%3AP2293%20%3FdiseaseGene%20.%20%20%20%20%20%20%20%20%20%23%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%0A%20%20wd%3AQ101405087%20rdfs%3Alabel%20%3FcellTypeLabel%20.%0A%20%20%3Fdisease%20rdfs%3Alabel%20%3FdiseaseLabel%20.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel%20.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%20%20%0A%20%7D%0A%0AGROUP%20BY%20%3FdiseaseLabel%20%3FcellTypeLabel%20%0AORDER%20BY%20DESC%28%3Fcount%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
-<br />                                 <h3 class="title is-3"> Some Curation Queries</h3>
 
-<h4 class="title is-3">Things that shouldn't be where they are</h3>
-      
-<p />
-<h5 class="title is-5"> Cells with Cell Ontology ID but not a subclass of cell </h5>      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20MINUS%20%7B%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
-  <br />
-<p />
-<h5 class="title is-5"> Cells with FMA ID but not Cell Ontology ID </h5>      
-        <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20%3Ffma_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%20%0A%20%20%3Fitem%20wdt%3AP1402%20%3Ffma_id%20.%0A%20%20%0A%20%20FILTER%20NOT%20EXISTS%20%7B%3Fitem%20wdt%3AP7963%20%3Fcl_id%20.%20%7D%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
-  <br />
-                
-<p />
-<h5 class="title is-5"> Instances of cell </h5>      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ7868%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>  <br />
+    <h5 class="title is-5"> Which properties are used to describe for those cell types? </h5>
 
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#SELECT%20DISTINCT%20%0A%3Fproperty%20%3FpropertyLabel%20%28COUNT%28%3Fitem%29%20AS%20%3Fcounts%29%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20%3B%0A%20%20%20%20%20%20%20%20%3Fp%20%3Fo%20.%0A%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%3Fproperty%20rdfs%3Alabel%20%3FpropertyLabel%20.%20%0A%20%20FILTER%28LANG%28%3FpropertyLabel%29%20%3D%20%22en%22%29%0A%20%20MINUS%20%7B%20%3Fproperty%20wikibase%3ApropertyType%20wikibase%3AExternalId%20.%7D%0A%0A%7D%20GROUP%20BY%20%3Fproperty%20%3FpropertyLabel%0AORDER%20BY%20DESC%28%3Fcounts%29"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+
+    <h5 class="title is-5"> Which identifiers connect those cell types to external resources? </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#SELECT%20DISTINCT%20%0A%3Fproperty%20%3FpropertyLabel%20%28COUNT%28%3Fitem%29%20AS%20%3Fcounts%29%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20%3B%0A%20%20%20%20%20%20%20%20%3Fp%20%3Fo%20.%0A%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%3Fproperty%20rdfs%3Alabel%20%3FpropertyLabel%20.%20%0A%20%20FILTER%28LANG%28%3FpropertyLabel%29%20%3D%20%22en%22%29%0A%20%20%3Fproperty%20wikibase%3ApropertyType%20wikibase%3AExternalId%20.%0A%0A%7D%20GROUP%20BY%20%3Fproperty%20%3FpropertyLabel%0AORDER%20BY%20DESC%28%3Fcounts%29"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+
+    <h5 class="title is-5"> Which images represent those cell classes? </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0ASELECT%20%0A%20%20%3Fitem%20%3FitemLabel%20%3Fimage%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20%3Fitem%20wdt%3AP18%20%3Fimage%20.%20%0A%20%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%0A%7D%0AORDER%20BY%0A%20%20DESC%20%28%3Fsitelinks%29"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe> <br />
     <br />
-<p />
-<p />
-<h5 class="title is-5">  Cell types that are subclasses of things other than cell types </h5>      
-      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%0A%20%20%3Fitem%20wdt%3AP279%20%3Fsuperclass%20.%20%0A%20%20FILTER%20NOT%20EXISTS%20%7B%3Fsuperclass%20wdt%3AP31%20wd%3AQ189118%20.%7D%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
-     <br />
-<p />     
-<h5 class="title is-5">  Rare statements used for subclasses of cell (Q7868), excluding identifiers </h5>      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%0A%3Fitem%20%3FitemLabel%20%0A%3Fproperty%20%3FpropertyLabel%0A%3Fobject%20%3FobjectLabel%0A%23%20%28IRI%28CONCAT%28str%28%3Fitem%29%2C%20%28REPLACE%28STR%28%3Fproperty%29%2C%22http%3A%2F%2Fwww.wikidata.org%2Fentity%2FP%22%2C%22%23P%22%29%29%29%29%20as%20%20%3FstatementUrl%29%0AWHERE%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20.%0A%20%20%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%20%20%3Fitem%20%3Fp%20%3Fobject.%0A%7BSELECT%20DISTINCT%20%0A%3Fproperty%20%3FpropertyLabel%20%0A%28COUNT%28%3Fitem%29%20AS%20%3Fcounts%29%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20%3B%0A%20%20%20%20%20%20%20%20%3Fp%20%3Fo%20.%0A%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%0A%20%20MINUS%20%7B%20%3Fproperty%20wikibase%3ApropertyType%20wikibase%3AExternalId%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20GROUP%20BY%20%3Fproperty%20%3FpropertyLabel%0AHAVING%20%28%3Fcounts%20%3C%2010%29%0AORDER%20BY%20DESC%28%3Fcounts%29%0A%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%0A%7D" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+
+    <p />
+    <h5 class="title is-5"> Which human cells have the most catalogued markers? </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#SELECT%20%3Fcell_type%20%3Fcell_typeLabel%20%28count%28%3Fmarker%29%20as%20%3Fmarker_count%29%0AWHERE%20%0A%7B%0A%20%20%3Fcell_type%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ189118.%0A%20%20%3Fcell_type%20wdt%3AP703%20wd%3AQ15978631.%0A%20%20%3Fcell_type%20wdt%3AP8872%20%3Fmarker.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3Fcell_type%20%3Fcell_typeLabel%0AORDER%20BY%20DESC%28%3Fmarker_count%29%20%0A"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <br />
+    <p />
+    <h5 class="title is-5"> Items with Cell Ontology IDs </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <br />
+
+    <h3 class="title is-3"> Integrative Queries</h3>
+
+    <p />
+    <h5 class="title is-5"> Cell types related to Parkinson via markers </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23title%3A%20Cell%20types%20related%20to%20Parkinsons%27%20disease%20via%20markers%20%0A%0ASELECT%20%3FcellTypeLabel%20%3FgeneLabel%20%3FdiseaseLabel%20%0AWHERE%20%0A%7B%0A%20%20wd%3AQ11085%20wdt%3AP2293%20%3FdiseaseGene.%20%20%23%20Parkinson%27s%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%3FcellType%20wdt%3AP8872%20%3FdiseaseGene.%20%23%20Cell%20type%20--%3E%20has%20marker%20--%3E%20gene%0A%20%20%0A%20%20%3FcellType%20rdfs%3Alabel%20%3FcellTypeLabel.%0A%20%20wd%3AQ11085%20rdfs%3Alabel%20%3FdiseaseLabel.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%7D"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <br />
+
+    <p />
+    <h5 class="title is-5"> Cell types related to Neurogenesis via markers </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23title%3A%20Cell%20types%20related%20to%20neurogenesis%20via%20markers%0A%0ASELECT%20%3FgeneLabel%20%3FcellTypeLabel%0AWHERE%20%0A%7B%0A%20%20%3Fprotein%20wdt%3AP682%20wd%3AQ1456827.%20%23%20protein%20molecular%20process%20neurogenesis%0A%20%20%3Fprotein%20wdt%3AP702%20%3Fgene.%20%20%20%20%20%20%20%23%20protein%20encoded%20by%20gene%0A%20%20%0A%20%20%7B%3Fgene%20wdt%3AP31%20wd%3AQ277338.%7D%20%20%20%20%23%20gene%20is%20an%20instance%20of%20a%20pseudogene%20%0A%20%20UNION%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20or%0A%20%20%7B%3Fgene%20wdt%3AP31%20wd%3AQ7187.%7D%20%20%20%20%20%20%23%20gene%20is%20an%20instance%20of%20a%20gene%0A%20%20%3Fgene%20wdt%3AP703%20wd%3AQ15978631.%20%20%20%23%20gene%20is%20found%20in%20taxon%20Homo%20sapiens%0A%20%20%0A%20%20%3FcellType%20wdt%3AP8872%20%3Fgene.%20%20%20%20%20%23%20cell%20type%20has%20marker%20gene%0A%20%20%0A%20%20%3FcellType%20rdfs%3Alabel%20%3FcellTypeLabel.%0A%20%20%3Fgene%20%20%20rdfs%3Alabel%20%3FgeneLabel.%0A%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%0A%7D"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <br />
+
+    <p />
+    <h5 class="title is-5">Diseases associated with pancreatic beta cells via markers </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23titles%3A%20Diseases%20associated%20with%20pancreatic%20beta%20cells%20via%20markers%0ASELECT%20%3FcellTypeLabel%20%3FdiseaseLabel%20%0A%28COUNT%28DISTINCT%20%3FdiseaseGene%29%20AS%20%3Fcount%29%20%0A%28GROUP_CONCAT%28DISTINCT%20%3FgeneLabel%3B%20SEPARATOR%3D%22%2C%20%22%29%20AS%20%3Fgenes%29%0AWHERE%20%0A%7B%0A%20%20wd%3AQ101405087%20wdt%3AP8872%20%3FdiseaseGene%20.%20%20%20%20%23%20human%20pancreatic%20beta%20cell%20--%3E%20%20has%20marker%20--%3E%20%20gene%0A%20%20%3Fdisease%20wdt%3AP2293%20%3FdiseaseGene%20.%20%20%20%20%20%20%20%20%20%23%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%0A%20%20wd%3AQ101405087%20rdfs%3Alabel%20%3FcellTypeLabel%20.%0A%20%20%3Fdisease%20rdfs%3Alabel%20%3FdiseaseLabel%20.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel%20.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%20%20%0A%20%7D%0A%0AGROUP%20BY%20%3FdiseaseLabel%20%3FcellTypeLabel%20%0AORDER%20BY%20DESC%28%3Fcount%29"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <br />
+    <h3 class="title is-3"> Some Curation Queries</h3>
+
+    <h4 class="title is-3">Things that shouldn't be where they are</h3>
+
+      <p />
+      <h5 class="title is-5"> Cells with Cell Ontology ID but not a subclass of cell </h5>
+      <iframe style="width: 80vw; height: 50vh; border: none;"
+        src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0A%20%20%3Fcell_ontology_id%0AWHERE%20%0A%7B%0A%0A%20%20%3Fitem%20wdt%3AP7963%20%3Fcell_ontology_id%20.%0A%20%20MINUS%20%7B%20%20%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A"
+        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
       <br />
-<p />
-      
- <h5 class="title is-5">     Cell types that have a page in English but not in portuguese </h5>      
-<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%20%3Fsitelink1%20%3Fsitelinks%0AWHERE%20%0A%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%20%20%0A%20%20%20%20%0A%20%7B%20%3Fsitelink1%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fen.wikipedia.org%2F%3E%3B%0A%20%20%20%20%20schema%3Aabout%20%3Fitem%3B%7D%0A%20%20MINUS%0A%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%3Fsitelink2%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fpt.wikipedia.org%2F%3E%3B%0A%20%20%20schema%3Aabout%20%3Fitem%3B%7D%0A%0A%20%20%3Fitem%20rdfs%3Alabel%20%3Flabel%0A%20%20FILTER%20%28lang%28%3Flabel%29%20%3D%20%27en%27%29%0A%20%20%20%20%20%20%20%20%0A%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20%20%20%20%20%20%20%0A%7D%0AORDER%20BY%20DESC%28%3Fsitelinks%29" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe> 
-        <br />
-<p />
-      
+      <p />
+      <h5 class="title is-5"> Cells with FMA ID but not Cell Ontology ID </h5>
+      <iframe style="width: 80vw; height: 50vh; border: none;"
+        src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20%3Ffma_id%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%20%0A%20%20%3Fitem%20wdt%3AP1402%20%3Ffma_id%20.%0A%20%20%0A%20%20FILTER%20NOT%20EXISTS%20%7B%3Fitem%20wdt%3AP7963%20%3Fcl_id%20.%20%7D%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%20%23%20Helps%20get%20the%20label%20in%20your%20language%2C%20if%20not%2C%20then%20en%20language%0A%7D"
+        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+      <br />
+
+      <p />
+      <h5 class="title is-5"> Instances of cell </h5>
+      <iframe style="width: 80vw; height: 50vh; border: none;"
+        src="https://query.wikidata.org/embed.html#SELECT%20%0A%20%20%3Fitem%20%3FitemLabel%0AWHERE%20%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%2Fwdt%3AP279%2a%20wd%3AQ7868%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A"
+        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe> <br />
+
+      <br />
+      <p />
+      <p />
+      <h5 class="title is-5"> Cell types that are subclasses of things other than cell types </h5>
+
+      <iframe style="width: 80vw; height: 50vh; border: none;"
+        src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%0A%20%20%3Fitem%20wdt%3AP279%20%3Fsuperclass%20.%20%0A%20%20FILTER%20NOT%20EXISTS%20%7B%3Fsuperclass%20wdt%3AP31%20wd%3AQ189118%20.%7D%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D"
+        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+      <br />
+      <p />
+      <h5 class="title is-5"> Rare statements used for subclasses of cell (Q7868), excluding identifiers </h5>
+      <iframe style="width: 80vw; height: 50vh; border: none;"
+        src="https://query.wikidata.org/embed.html#SELECT%20%0A%3Fitem%20%3FitemLabel%20%0A%3Fproperty%20%3FpropertyLabel%0A%3Fobject%20%3FobjectLabel%0A%23%20%28IRI%28CONCAT%28str%28%3Fitem%29%2C%20%28REPLACE%28STR%28%3Fproperty%29%2C%22http%3A%2F%2Fwww.wikidata.org%2Fentity%2FP%22%2C%22%23P%22%29%29%29%29%20as%20%20%3FstatementUrl%29%0AWHERE%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20.%0A%20%20%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%20%20%3Fitem%20%3Fp%20%3Fobject.%0A%7BSELECT%20DISTINCT%20%0A%3Fproperty%20%3FpropertyLabel%20%0A%28COUNT%28%3Fitem%29%20AS%20%3Fcounts%29%20WHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP279%2B%20wd%3AQ7868%20%3B%0A%20%20%20%20%20%20%20%20%3Fp%20%3Fo%20.%0A%20%20%3Fproperty%20wikibase%3AdirectClaim%20%3Fp%20.%0A%20%20%0A%20%20MINUS%20%7B%20%3Fproperty%20wikibase%3ApropertyType%20wikibase%3AExternalId%20.%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20GROUP%20BY%20%3Fproperty%20%3FpropertyLabel%0AHAVING%20%28%3Fcounts%20%3C%2010%29%0AORDER%20BY%20DESC%28%3Fcounts%29%0A%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%0A%7D"
+        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+      <br />
+      <p />
+
+      <h5 class="title is-5"> Cell types that have a page in English but not in portuguese </h5>
+      <iframe style="width: 80vw; height: 50vh; border: none;"
+        src="https://query.wikidata.org/embed.html#SELECT%20%3Fitem%20%20%3Fsitelink1%20%3Fsitelinks%0AWHERE%20%0A%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%20%20%0A%20%20%20%20%0A%20%7B%20%3Fsitelink1%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fen.wikipedia.org%2F%3E%3B%0A%20%20%20%20%20schema%3Aabout%20%3Fitem%3B%7D%0A%20%20MINUS%0A%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%3Fsitelink2%20schema%3AisPartOf%20%3Chttps%3A%2F%2Fpt.wikipedia.org%2F%3E%3B%0A%20%20%20schema%3Aabout%20%3Fitem%3B%7D%0A%0A%20%20%3Fitem%20rdfs%3Alabel%20%3Flabel%0A%20%20FILTER%20%28lang%28%3Flabel%29%20%3D%20%27en%27%29%0A%20%20%20%20%20%20%20%20%0A%20%3Fitem%20wikibase%3Asitelinks%20%3Fsitelinks%20.%20%0A%20%20%20%20%20%20%20%20%0A%7D%0AORDER%20BY%20DESC%28%3Fsitelinks%29"
+        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+      <br />
+      <p />
+
+
 
   </div>
-  
-  
-  
-      <footer class="footer">
-        <div class="container">
-            <div class="content has-text-centered">
-                <h4>
-                   By Tiago Lubiana. CC0. <a href="https://github.com/lubianat/cell_type_query_book/> GitHub repository </a>. 
-            </div>
-        </div>
-    </footer>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p> By Tiago Lubiana. CC0. <a href="https://github.com/lubianat/cell_type_query_book"> GitHub repository </a>.
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
