@@ -39,6 +39,12 @@
       referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe> <br />
     <p />
 
+    <p />
+    <h5 class="title is-5"> When were these cell classes created? </h5>
+    <iframe style="width: 80vw; height: 50vh; border: none;"
+      src="https://query.wikidata.org/embed.html#%23defaultView%3AAreaChart%0ASELECT%20%3Fdate%20%3Fcumulativecount%0A%7B%0A%20%20%20%20hint%3AQuery%20hint%3Aoptimizer%20%22None%22.%0A%20%20%20%20%7B%20%20%20SELECT%20%3Fmilestonep%20%28COUNT%28DISTINCT%20%3Fitem%29%20as%20%3Fcumulativecount%29%0A%20%20%20%20%20%20%20%20WHERE%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%7B%3Fitem%20wdt%3AP31%20wd%3AQ189118%20.%7D%0A%20%20%20%20%20%20%20%20%20%20UNION%0A%20%20%20%20%20%20%20%20%20%20%7B%3Fitem%20wdt%3AP279%2a%20wd%3AQ7868%20.%7D%0A%20%20%20%20%20%20%20%20%20%20BIND%28%20xsd%3Ainteger%28%20substr%28str%28%3Fitem%29%2C%2033%29%29%20as%20%3Fqid%29%0A%20%20%20%20%20%20%20%20%20%20wd%3AQ38074555%20p%3AP1114%20%3Fmilestonep%20.%0A%20%20%20%20%20%20%20%20%20%20%3Fmilestonep%20ps%3AP1114%20%3Fmilestone%20.%0A%20%20%20%20%20%20%20%20%20%20FILTER%28%20%3Fmilestone%20%3E%20%3Fqid%20%29%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20GROUP%20BY%20%3Fmilestonep%0A%20%20%20%20%7D%0A%20%20%20%20%3Fmilestonep%20pq%3AP585%20%3Fdate%0A%7D"
+      referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+
 
     <h5 class="title is-5"> What are the sources of evidence for those cell types? </h5>
     <iframe style="width: 80%; height: 50vh; border: none;"
